@@ -7,8 +7,12 @@ First you need to start the controller manager:
 
 `roslaunch dynamixel_project controller_manager.launch`
 
-Then once this is running you launch the tilt controller:
+Then once this is running you launch the meta controller:
 
-`roslaunch dynamixel_project start_tilt_controller.launch`
+`roslaunch dynamixel_project start_meta_controller.launch`
 
-You can adjust the launch parameters in the .yaml file
+You can adjust the launch parameters in the tilt.yaml file
+
+
+Set the angle with:
+`rostopic pub -1 /joint2_controller/command std_msgs/Float64`

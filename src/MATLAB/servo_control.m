@@ -1,8 +1,10 @@
 rosinit
 rostopic list
 
-motors = rossubscriber('/motor_states/pan_tilt_port')
-motorstatelist = receive(motors,10)
+%motors = rossubscriber('/joint1_controller/pan_tilt_port')
+%motorstatelist = receive(motors,10)
+
+joint1 = rospublisher
 
 %robotpose = rossubscriber('/pose',@servoPoseCallback)
 
