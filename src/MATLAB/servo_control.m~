@@ -3,11 +3,8 @@ rosinit
 rostopic list
 
 % Angle is in radians between -2.6 and 2.6
-% Can calculate as motor is between 0..300 degrees (-150..150)
-% 300*pi/180/2 is the max angle
-
-minangle = -300*pi/180/2;
-maxangle = 300*pi/180/2;
+% Can calculate as motor is between 0..300 degrees
+% 300*pi/180
 
 publishers = [
     rospublisher('joint1_controller/command', 'std_msgs/Float64');
@@ -28,7 +25,7 @@ subscribers = [
 %motors = rossubscriber('/joint1_controller/pan_tilt_port')
 %motorstatelist = receive(motors,10)
 
-setJointAngle(minangle, publishers(1));
+setJointAngle(-2.6, publishers(1));
 pause(3);
 getJointAngle(subscribers(1))
 

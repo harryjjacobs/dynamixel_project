@@ -16,3 +16,5 @@ You can adjust the launch parameters in the tilt.yaml file
 
 Set the angle with:
 `rostopic pub -1 /joint2_controller/command std_msgs/Float64`
+
+[http://wiki.ros.org/dynamixel_controllers/Tutorials/Creatingmetacontroller] (http://wiki.ros.org/dynamixel_controllers/Tutorials/Creatingmetacontroller)

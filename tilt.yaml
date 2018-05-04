@@ -9,7 +9,7 @@ joint1_controller:
         id: 1
         init: 512
         min: 0
-        max: 1024
+        max: 2048
         
 joint2_controller:
     controller:
@@ -22,7 +22,7 @@ joint2_controller:
         id: 2
         init: 512
         min: 0
-        max: 1024
+        max: 2048
 
         
 joint3_controller:
@@ -36,7 +36,7 @@ joint3_controller:
         id: 3
         init: 512
         min: 0
-        max: 1024
+        max: 2048
 
 joint4_controller:
     controller:
@@ -49,7 +49,7 @@ joint4_controller:
         id: 4
         init: 512
         min: 0
-        max: 1024
+        max: 2048
 
 joint5_controller:
     controller:
@@ -62,4 +62,4 @@ joint5_controller:
         id: 5
         init: 512
         min: 0
-        max: 1024
+        max: 2048
