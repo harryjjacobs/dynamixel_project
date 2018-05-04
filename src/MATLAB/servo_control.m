@@ -9,6 +9,9 @@ rostopic list
 minangle = -300*pi/180/2;
 maxangle = 300*pi/180/2;
 
+minangles = [minangle; minangle/4; minangle/4; minangle/4; minangle];
+maxangles = [maxangle; maxangle/4; maxangle/4; maxangle/2; maxangle];
+
 publishers = [
     rospublisher('joint1_controller/command', 'std_msgs/Float64');
     rospublisher('joint2_controller/command', 'std_msgs/Float64');
@@ -28,7 +31,9 @@ subscribers = [
 %motors = rossubscriber('/joint1_controller/pan_tilt_port')
 %motorstatelist = receive(motors,10)
 
-setJointAngle(minangle, publishers(1));
+setJointAngle(0, publishers(1));
+setJointAngle(minangles(2), publishers(2));
+setJointAngle(0, publishers(3));
 pause(3);
 getJointAngle(subscribers(1))
 
