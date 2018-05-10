@@ -18,3 +18,7 @@ Set the angle with:
 `rostopic pub -1 /joint2_controller/command std_msgs/Float64`
 
 [http://wiki.ros.org/dynamixel_controllers/Tutorials/Creatingmetacontroller] (http://wiki.ros.org/dynamixel_controllers/Tutorials/Creatingmetacontroller)
+
+To install rosserial for arduino:
+sudo apt-get install ros-kinetic-rosserial-arduino
+sudo apt-get install ros-kinetic-rosserial
