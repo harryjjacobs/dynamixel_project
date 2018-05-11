@@ -1,13 +1,20 @@
 #include <ros.h>
-#include <std_msgs/Empty.h>
+#include <std_msgs/Bool.h>
 
 ros::NodeHandle nh;
 
-void messageCb( const std_msgs::Empty& toggle_msg){
-  digitalWrite(13, HIGH-digitalRead(13));   // blink the led
+void messageCb( const std_msgs::Bool& toggle_msg){
+  if (toggle_msg.data == true)
+  {
+    digitalWrite(13, HIGH);   // Turn on the electromagnet
+  }
+  else
+  {
+    digitalWrite(13, LOW);   // Turn off the electromagnet
+  }
 }
 
-ros::Subscriber<std_msgs::Empty> sub("toggle_led", &messageCb );
+ros::Subscriber<std_msgs::Bool> sub("toggle_electromag", &messageCb );
 
 void setup()
 {
