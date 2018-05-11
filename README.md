@@ -34,3 +34,6 @@ The `ros_lib` directory must be deleted if it exists:
 `rosrun rosserial_arduino make_libraries.py .`
 
 Then restart the Arduino IDE
+
+Run:
+`rosrun rosserial_python serial_node.py /dev/ttyACM0`
