@@ -7,9 +7,9 @@ joint1_controller:
     joint_speed: 1.17
     motor:
         id: 1
-        init: 512
+        init: 511
         min: 0
-        max: 2048
+        max: 1023
         
 joint2_controller:
     controller:
@@ -20,11 +20,10 @@ joint2_controller:
     joint_speed: 1.17
     motor:
         id: 2
-        init: 512
+        init: 511
         min: 0
-        max: 2048
+        max: 1023
 
-        
 joint3_controller:
     controller:
         package: dynamixel_controllers
@@ -34,9 +33,9 @@ joint3_controller:
     joint_speed: 1.17
     motor:
         id: 3
-        init: 512
+        init: 511
         min: 0
-        max: 2048
+        max: 1023
 
 joint4_controller:
     controller:
@@ -47,9 +46,9 @@ joint4_controller:
     joint_speed: 1.17
     motor:
         id: 4
-        init: 512
+        init: 2047
         min: 0
-        max: 2048
+        max: 4095
 
 joint5_controller:
     controller:
@@ -60,6 +59,6 @@ joint5_controller:
     joint_speed: 1.17
     motor:
         id: 5
-        init: 512
+        init: 0
         min: 0
-        max: 2048
+        max: 4095
