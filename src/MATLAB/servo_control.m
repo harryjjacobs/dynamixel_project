@@ -28,6 +28,13 @@ subscribers = [
     rossubscriber('joint5_controller/state');
 ];
 
+% Create new publisher
+emPub = rospublisher('/toggle_electromag', 'std_msgs/Bool')
+pause(2) % Wait to ensure publisher is registered
+msg = rosmessage(emPub);
+msg.Data = angle;
+send(emPub, msg);
+
 %motors = rossubscriber('/joint1_controller/pan_tilt_port')
 %motorstatelist = receive(motors,10)
 
