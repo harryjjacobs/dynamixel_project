@@ -1,7 +1,10 @@
 This project should be placed in a catkin workspace
 
 do 'catkin\_make' in the catkin_ws after cloning this repo
-and then do 'source devel/setup.bash'
+and then do: 
+`source /opt/ros/kinetic/setup.bash`
+Followed by:
+`source devel/setup.bash`
 
 First you need to start the controller manager:
 
