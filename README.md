@@ -20,5 +20,17 @@ Set the angle with:
 [http://wiki.ros.org/dynamixel_controllers/Tutorials/Creatingmetacontroller] (http://wiki.ros.org/dynamixel_controllers/Tutorials/Creatingmetacontroller)
 
 To install rosserial for arduino:
-`sudo apt-get install ros-kinetic-rosserial-arduino`
-`sudo apt-get install ros-kinetic-rosserial`
+`sudo apt install ros-kinetic-rosserial-python ros-kinetic-rosserial-arduino`
+
+Then:
+
+`cd <sketchbook>/libraries`
+Where <sketchbook> is your arduino sketch directory. 
+
+The `ros_lib` directory must be deleted if it exists:
+
+`rm -rf ros_lib`
+
+`rosrun rosserial_arduino make_libraries.py .`
+
+Then restart the Arduino IDE
