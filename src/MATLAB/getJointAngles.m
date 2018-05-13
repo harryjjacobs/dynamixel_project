@@ -1,5 +1,5 @@
 function angles = getJointAngles(subscribers)
-    n = len(subscribers);
+    n = length(subscribers);
     angles = zeros(n);
     for i = 1:n
         data = receive(subscribers(i), 1);
