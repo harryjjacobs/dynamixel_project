@@ -38,13 +38,26 @@ msg = rosmessage(emPub);
 msg.Data = true;
 send(emPub, msg);
 
+l1 = 0.1;
+l2 = 0.1;
+    
+% Define the D-H table for the arm
+alpha0 = 0; a0=0; d1=0; theta1=0;					% DH table row: i=1
+L(1) = Link([theta1 d1 a0 alpha0 0 0], 'modified'); % We use the modified DH
 
-%motors = rossubscriber('/joint1_controller/pan_tilt_port')
-%motorstatelist = receive(motors,10)
+alpha1 = -90*pi/180; a1=0; d2=0; theta2=0;			% DH table row: i=2
+L(2) = Link([theta2 d2 a1 alpha1 0 0], 'modified'); % We use the modified DH
 
-%setJointAngle(Theta1, publishers(3));
+alpha2 = 0; a2=l1; d3=0; theta3=0;			% DH table row: i=2
+L(3) = Link([theta3 d3 a2 alpha2 0 0], 'modified'); % We use the modified DH
 
-%setJointAngle(minangles(2), publishers(2));
+alpha3 = 0; a3=l2; d4=0; theta4=0;			% DH table row: i=2
+L(4) = Link([theta4 d4 a3 alpha3 0 0], 'modified'); % We use the modified DH
+
+alpha4 = -90*pi/180; a4=1; d5=0; theta5=0;			% DH table row: i=2
+L(5) = Link([theta5 d5 a4 alpha4 0 0], 'modified'); % We use the modified DH
+
+arm = SerialLink(L, 'name', 'Arm')
 
 %{
 % Reset all
@@ -66,19 +79,8 @@ setJointAngle(angles(1), publishers(3));
 setJointAngle(angles(3), publishers(1));
 %}
 
-%{
-pause(0.1);
-setJointAngle(0, publishers(2));
-pause(0.1);
-setJointAngle(0, publishers(3));
-pause(0.1);
-setJointAngle(0, publishers(4));
-pause(0.1);
-setJointAngle(0, publishers(5));
-%}
-
-pause(10);
-%getJointAngle(subscribers(1))
+pause(3);
+angles = getJointAngles(subscribers(1))
 
 %robotpose = rossubscriber('/pose',@servoPoseCallback)
 % run these in command window to stop
