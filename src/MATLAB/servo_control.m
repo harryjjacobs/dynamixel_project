@@ -14,7 +14,6 @@ halfpi = pi/2;
 minangles = [minangle; minangle/4; minangle/4; minangle/4; minangle];
 maxangles = [maxangle; maxangle/4; maxangle/4; maxangle/2; maxangle];
 
-
 publishers = [
     rospublisher('joint1_controller/command', 'std_msgs/Float64');
     rospublisher('joint2_controller/command', 'std_msgs/Float64');
@@ -31,7 +30,6 @@ subscribers = [
     rossubscriber('joint4_controller/state');
     rossubscriber('joint5_controller/state');
 ];
-
 
 % Create new publisher
 emPub = rospublisher('/toggle_electromag', 'std_msgs/Bool')
