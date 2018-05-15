@@ -132,9 +132,5 @@ position(2) = t(2);
 position(3) = t(3);
 position
 
-%robotpose = rossubscriber('/pose',@servoPoseCallback)
-% run these in command window to stop
-%clear robotpose
-
 pause(1);
 rosshutdown
