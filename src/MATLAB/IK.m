@@ -14,7 +14,7 @@ function angles = IK(pos)
     theta1 = Beta + Gamma;
     theta3 = ThetaY;
     
-    angles = [theta1, theta2, theta3];
+    angles = [theta3, theta1, theta2];
     
     %if Theta2 >0, Theta1 = Beta - Gamma) % under arm
 	  % over arm
